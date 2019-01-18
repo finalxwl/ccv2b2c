@@ -37,7 +37,7 @@
                 },
                 {
                     "name": "yacceleratorstorefront",
-                    "contextPath": "/yacceleratorstorefront"
+                    "contextPath": ""
                 },
                 {
                     "name": "acceleratorservices",
