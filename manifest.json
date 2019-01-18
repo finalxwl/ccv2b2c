@@ -1,5 +1,5 @@
 {
-    "commerceSuiteVersion": "6.7.0",
+    "commerceSuiteVersion": "1808",
     "extensions": [
         "modeltacceleratorservices",
         "electronicsstore",
@@ -26,6 +26,10 @@
         },
         {
             "name": "accstorefront",
+            "properties": [{
+                "key": "yacceleratorstorefront.webroot",
+                "value": ""
+            }],
             "webapps": [
                 {
                     "name": "mediaweb",
