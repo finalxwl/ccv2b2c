@@ -3,8 +3,62 @@
     "extensions": [
         "modeltacceleratorservices",
         "electronicsstore",
-        "yacceleratorstorefront",
-        "backoffice"
+        "backoffice",
+        "trainingcore",
+        "trainingfacades",
+        "trainingstorefront",
+        "traininginitialdata",
+        "trainingtest",
+        "trainingcockpits",
+        "trainingfulfilmentprocess"  
+        
+    ],  "properties": [
+        {
+          "key": "storefront.wro4j.enabled",
+          "value": "true"
+        },
+        {
+          "key": "log4j2.logger.wro4j.name",
+          "value": "ro.isdc"
+        },
+        {
+          "key": "log4j2.logger.wro4j.level",
+          "value": "debug"
+        },
+        {
+          "key": "log4j2.logger.wro4j.appenderRef.stdout.ref",
+          "value": "STDOUT"
+        },
+        {
+            "key": "lang.packs",
+            "value": "de,en,es,es_CO,fr,hu,it,ja,ko,pl,pt,ru,zh,zh_TW,hi,id,cs,cy"
+        },
+        {
+            "key": "test.property.1",
+            "value": "test-property-1-value-prod",
+            "persona": "production"
+        },
+        {
+            "key": "test.property.1",
+            "value": "test-property-1-value-dev",
+            "persona": "development"
+        },
+        {
+            "key": "test.property.1",
+            "value": "test-property-1-value"
+        },
+        {
+            "key": "test.property.2",
+            "value": "test-property-2-value"
+        },
+		{
+			"key": "googleApiKey",
+			"value": ""
+		},
+		{
+			"key": "multicountrysampledataaddon.import.active",
+			"value": "false"
+		}
     ],
          "aspects": [
         {
@@ -27,7 +81,7 @@
         {
             "name": "accstorefront",
             "properties": [{
-                "key": "yacceleratorstorefront.webroot",
+                "key": "trainingstorefront.webroot",
                 "value": ""
             }],
             "webapps": [
@@ -36,7 +90,7 @@
                     "contextPath": "/medias"
                 },
                 {
-                    "name": "yacceleratorstorefront",
+                    "name": "trainingstorefront",
                     "contextPath": ""
                 },
                 {
