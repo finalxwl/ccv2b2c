@@ -10,7 +10,9 @@
         "traininginitialdata",
         "trainingtest",
         "trainingcockpits",
-        "trainingfulfilmentprocess"  
+        "trainingfulfilmentprocess",
+	    "cscockpit",
+	    "cmscockpit"
         
     ],  "properties": [
         {
