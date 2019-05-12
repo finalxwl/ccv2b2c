@@ -9,10 +9,8 @@
         "trainingstorefront",
         "traininginitialdata",
         "trainingtest",
-        "trainingcockpits",
-        "trainingfulfilmentprocess",
-	    "cscockpit",
-	    "cmscockpit"
+        "trainingfulfilmentprocess"
+
         
     ],  "properties": [
         {
