@@ -1,18 +1,49 @@
 {
-    "commerceSuiteVersion": "1808",
+    "commerceSuiteVersion":"1808",
     "extensions": [
-        "modeltacceleratorservices",
-        "electronicsstore",
-        "backoffice",
-        "trainingcore",
-        "trainingfacades",
-        "trainingstorefront",
-        "traininginitialdata",
-        "trainingtest",
-        "trainingfulfilmentprocess"
-
-        
-    ],  "properties": [
+		"commerceservicesbackoffice",
+		"solrfacetsearchbackoffice",
+		"solrserver",
+		"ycommercewebservices",
+		"electronicsstore",
+		"apparelstore",
+		"acceleratorwebservicesaddon",
+		"cmswebservices",
+		"smarteditwebservices",
+		"cmssmarteditwebservices",
+		"permissionswebservices",
+		"smarteditaddon",
+		"smartedit",
+		"cmssmartedit",
+		"cmsbackoffice",
+    		"previewwebservices",
+		"previewpersonalizationweb",
+    		"personalizationcmsweb",
+    		"personalizationsmartedit",
+    		"personalizationpromotionssmartedit",
+    		"personalizationsampledataaddon",
+    		"personalizationpromotions",
+    		"personalizationpromotionsweb",
+    		"personalizationservicesbackoffice",
+    		"personalizationpromotionsbackoffice",
+    		"personalizationcmsbackoffice",
+    		"personalizationsearchbackoffice",
+    		"personalizationsearchsmartedit",
+	        "trainingcore",
+        	"trainingfacades",
+        	"trainingstorefront",
+        	"traininginitialdata",
+        	"trainingtest",
+        	"trainingfulfilmentprocess"
+    ],
+	"storefrontAddons": [
+		{
+		    "addon": "smarteditaddon",
+		    "storefront": "trainingstorefront",
+		    "template": "trainingstorefront"
+		}
+	],
+"properties": [
         {
           "key": "storefront.wro4j.enabled",
           "value": "true"
@@ -60,9 +91,15 @@
 			"value": "false"
 		}
     ],
-         "aspects": [
+    "aspects": [
         {
             "name": "backoffice",
+            "properties": [
+	                {
+	                    "key":"storefrontContextRoot",
+	                    "value":"/trainingstorefront"
+	                }
+            ],
             "webapps": [
                 {
                     "name": "hac",
@@ -74,16 +111,98 @@
                 },
                 {
                     "name": "backoffice",
-                    "contextPath": ""
-                }
+                    "contextPath": "/backoffice"
+                },
+				{
+				    "name": "trainingstorefront",
+				    "contextPath": "/trainingstorefront"
+				},
+				{
+				    "name": "acceleratorservices",
+				    "contextPath": "/acceleratorservices"
+				},
+                {
+                    "name": "ycommercewebservices",
+                    "contextPath": "/rest"
+                },
+				{
+				    "name": "smartedit",
+				    "contextPath": "/smartedit"
+				},
+				{
+				    "name": "cmssmartedit",
+				    "contextPath": "/cmssmartedit"
+				},
+				{
+				    "name": "smarteditwebservices",
+				    "contextPath": "/smarteditwebservices"
+				},
+				{
+				    "name": "cmssmarteditwebservices",
+				    "contextPath": "/cmssmarteditwebservices"
+				},
+				{
+				    "name": "personalizationsmartedit",
+				    "contextPath": "/personalizationsmartedit"
+				},
+				{
+				    "name": "personalizationpromotionssmartedit",
+				    "contextPath": "/personalizationpromotionssmartedit"
+				},
+				{
+				    "name": "oauth2",
+				    "contextPath": "/authorizationserver"
+				},
+				{
+				    "name": "cmswebservices",
+				    "contextPath": "/cmswebservices"
+				},
+				{
+				    "name": "permissionswebservices",
+				    "contextPath": "/permissionswebservices"
+				},
+				{
+				    "name": "previewwebservices",
+				    "contextPath": "/previewwebservices"
+				},
+				{
+				    "name": "personalizationwebservices",
+				    "contextPath": "/personalizationwebservices"
+				},
+				{
+				    "name": "personalizationsearchsmartedit",
+				    "contextPath": "/personalizationsearchsmartedit"
+				}
             ]
         },
         {
             "name": "accstorefront",
-            "properties": [{
-                "key": "trainingstorefront.webroot",
-                "value": ""
-            }],
+            "properties": [
+                {
+                    "key": "spring.session.enabled",
+                    "value": "true"
+                },
+                {
+                    "key": "spring.session.trainingstorefront.save",
+                    "value":"async"
+                },
+                {
+                    "key": "spring.session.trainingstorefront.cookie.name",
+                    "value": "JSESSIONID"
+                },
+                {
+                    "key": "spring.session.trainingstorefront.cookie.path",
+                    "value": "/"
+                },
+                {
+                    "key":"storefrontContextRoot",
+                    "value":""
+                },
+                {
+                    "key":"xss.filter.header.X-Frame-Options",
+                    "value":""
+                }
+            ],
             "webapps": [
                 {
                     "name": "mediaweb",
@@ -96,12 +215,29 @@
                 {
                     "name": "acceleratorservices",
                     "contextPath": "/acceleratorservices"
+                },
+                {
+                    "name": "ycommercewebservices",
+                    "contextPath": "/rest"
+                },
+                {
+                    "name": "hac",
+                    "contextPath": "/hac"
+                },
+                {
+                    "name": "oauth2",
+                    "contextPath": "/authorizationserver"
                 }
             ]
         },
         {
             "name": "backgroundProcessing",
-            "properties": [],
+            "properties": [
+                {
+                    "key": "cluster.node.groups",
+                    "value": "integration,yHotfolderCandidate"
+                }
+            ],
             "webapps": [
                 {
                     "name": "hac",
