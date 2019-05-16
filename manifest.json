@@ -1,7 +1,5 @@
 {
     "extensions": [
-        "kiwi",
-        "tiger",
         "yacceleratorstorefront",
         "backoffice",
         "platformbackoffice",
