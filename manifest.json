@@ -1,14 +1,54 @@
 {
-    "commerceSuiteVersion": "1811",
     "extensions": [
+        "yacceleratorstorefront",
+        "backoffice",
+        "platformbackoffice",
         "modeltacceleratorservices",
         "electronicsstore",
-        "yacceleratorstorefront",
-        "backoffice"
+        "cmsbackoffice",
+        "yacceleratorfulfilmentprocess",
+        "ycommercewebservices",
+        "cmswebservices",
+        "permissionswebservices"
     ],
-         "aspects": [
+    "properties": [
+        {
+            "key": "lang.packs",
+            "value": "de,en,es,es_CO,fr,it,ja,ko,pt,ru,zh,zh_TW,hi,id,cs,cy"
+        },
+        {
+            "key": "test.property.1",
+            "value": "test-property-1-value-prod",
+            "persona": "production"
+        },
+        {
+            "key": "test.property.1",
+            "value": "test-property-1-value-dev",
+            "persona": "development"
+        },
+        {
+            "key": "test.property.1",
+            "value": "test-property-1-value"
+        },
+        {
+            "key": "test.property.2",
+            "value": "test-property-2-value"
+        }
+    ],
+    "aspects": [
         {
             "name": "backoffice",
+            "properties": [
+                {
+                    "key": "test.property.1",
+                    "value": "test.property-1-value-prod-backoffice",
+                    "persona": "production"
+                },
+                {
+                    "key": "test.property.2",
+                    "value": "test.property-2-value-backoffice"
+                }
+            ],
             "webapps": [
                 {
                     "name": "hac",
@@ -20,16 +60,61 @@
                 },
                 {
                     "name": "backoffice",
-                    "contextPath": ""
+                    "contextPath": "/backoffice"
                 }
             ]
         },
         {
+            "name": "api",
+            "properties": [
+                    {
+                        "key":"xss.filter.header.X-Frame-Options",
+                        "value":""
+                    }
+            ],
+            "webapps": [
+                {
+                    "name": "ycommercewebservices",
+                    "contextPath": "/rest"
+                },
+                {
+                    "name": "oauth2",
+                    "contextPath": "/authorizationserver"
+                },
+                {
+                    "name": "cmswebservices",
+                    "contextPath": "/cmswebservices"
+                },
+                {
+                    "name": "permissionswebservices",
+                    "contextPath": "/permissionswebservices"
+                }
+           ]
+        },
+        {
             "name": "accstorefront",
-            "properties": [{
-                "key": "yacceleratorstorefront.webroot",
-                "value": ""
-            }],
+            "properties": [
+                {
+                    "key": "spring.session.enabled",
+                    "value": "true"
+                },
+                {
+                    "key": "spring.session.yacceleratorstorefront.save",
+                    "value": "async"
+                },
+                {
+                    "key": "spring.session.yacceleratorstorefront.cookie.name",
+                    "value": "JSESSIONID"
+                },
+                {
+                    "key": "spring.session.yacceleratorstorefront.cookie.path",
+                    "value": "/"
+                },
+                {
+                    "key": "storefrontContextRoot",
+                    "value": ""
+                }
+            ],
             "webapps": [
                 {
                     "name": "mediaweb",
@@ -47,7 +132,9 @@
         },
         {
             "name": "backgroundProcessing",
-            "properties": [],
+            "properties": [
+                
+            ],
             "webapps": [
                 {
                     "name": "hac",
@@ -59,5 +146,20 @@
                 }
             ]
         }
-    ]
+    ],
+    "tests": {
+        "extensions": [
+            "kiwi",
+            "tiger",
+            "albinoaddon"
+        ],
+        "annotations": [
+            "UnitTests",
+            "IntegrationTests"
+        ],
+        "packages": [
+            "com.acme.*"
+        ]
+    },
+    "commerceSuiteVersion": "1811"
 }
