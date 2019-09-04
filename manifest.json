@@ -274,7 +274,7 @@
             "addon": "cmsoccaddon",
             "storefront": "ycommercewebservices",
             "template": "ycommercewebservices"
-        }
+	}
     ],
      "aspects": [
         {
