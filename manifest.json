@@ -271,7 +271,8 @@
             "storefront": "ycommercewebservices",
             "template": "ycommercewebservices"
         },
-            "addon": "cmsoccaddon",
+        { 
+	    "addon": "cmsoccaddon",
             "storefront": "ycommercewebservices",
             "template": "ycommercewebservices"
 	}
@@ -306,7 +307,8 @@
                     "name": "backoffice",
                     "contextPath": "/backoffice"
                 },
-                    "name": "yacceleratorstorefront",
+		{
+		    "name": "yacceleratorstorefront",
                     "contextPath": "/yacceleratorstorefront"
                 },
                 {
